@@ -2165,6 +2165,10 @@ void clean_up_after_endstop_or_probe_move() {
 
           deploy ? run_deploy_moves_script() : run_stow_moves_script();
 
+        #elif ENABLED(Z_RACK_PINION)                                                                                    //--------------------------ALE------------------------
+        
+          do_blocking_move_to_x(deploy? Z_RACK_PINION_X_ARMED:Z_RACK_PINION_X_DESARMED);                                //--------------------------ALE------------------------
+          
         #endif
 
     #ifdef _TRIGGERED_WHEN_STOWED_TEST

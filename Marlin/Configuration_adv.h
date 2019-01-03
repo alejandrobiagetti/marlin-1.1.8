@@ -75,8 +75,8 @@
  * THERMAL_PROTECTION_HYSTERESIS and/or THERMAL_PROTECTION_PERIOD
  */
 #if ENABLED(THERMAL_PROTECTION_HOTENDS)
-  #define THERMAL_PROTECTION_PERIOD 40        // Seconds
-  #define THERMAL_PROTECTION_HYSTERESIS 4     // Degrees Celsius
+  #define THERMAL_PROTECTION_PERIOD 60        // Seconds                                                                    //--------------------------ALE------------------------
+  #define THERMAL_PROTECTION_HYSTERESIS 2     // Degrees Celsius                                                            //--------------------------ALE------------------------
 
   /**
    * Whenever an M104, M109, or M303 increases the target temperature, the
@@ -90,15 +90,15 @@
    * and/or decrease WATCH_TEMP_INCREASE. WATCH_TEMP_INCREASE should not be set
    * below 2.
    */
-  #define WATCH_TEMP_PERIOD 20                // Seconds
-  #define WATCH_TEMP_INCREASE 2               // Degrees Celsius
+  #define WATCH_TEMP_PERIOD 30                // Seconds                                                                    //--------------------------ALE------------------------
+  #define WATCH_TEMP_INCREASE 1               // Degrees Celsius                                                            //--------------------------ALE------------------------
 #endif
 
 /**
  * Thermal Protection parameters for the bed are just as above for hotends.
  */
 #if ENABLED(THERMAL_PROTECTION_BED)
-  #define THERMAL_PROTECTION_BED_PERIOD 20    // Seconds
+  #define THERMAL_PROTECTION_BED_PERIOD 120    // Seconds                                                                   //--------------------------ALE------------------------
   #define THERMAL_PROTECTION_BED_HYSTERESIS 2 // Degrees Celsius
 
   /**
@@ -785,6 +785,10 @@
   //#define MESH_MIN_Y MESH_INSET
   //#define MESH_MAX_X X_BED_SIZE - (MESH_INSET)
   //#define MESH_MAX_Y Y_BED_SIZE - (MESH_INSET)
+  #define MESH_MIN_X 42                                                                                       //--------------------------ALE------------------------
+  #define MESH_MIN_Y 24                                                                                       //--------------------------ALE------------------------
+  #define MESH_MAX_X 195                                                                                      //--------------------------ALE------------------------
+  #define MESH_MAX_Y 180                                                                                      //--------------------------ALE------------------------
 #endif
 
 // @section extras
@@ -975,7 +979,7 @@
  * Requires NOZZLE_PARK_FEATURE.
  * This feature is required for the default FILAMENT_RUNOUT_SCRIPT.
  */
-//#define ADVANCED_PAUSE_FEATURE
+#define ADVANCED_PAUSE_FEATURE                                                                                  //--------------------------ALE------------------------
 #if ENABLED(ADVANCED_PAUSE_FEATURE)
   #define PAUSE_PARK_RETRACT_FEEDRATE         60  // (mm/s) Initial retract feedrate.
   #define PAUSE_PARK_RETRACT_LENGTH            2  // (mm) Initial retract.
